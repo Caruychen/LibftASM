@@ -18,6 +18,7 @@ NFLAGS :=	-f macho64
 SRC_DIR :=	src
 OBJ_DIR :=	obj
 SRCS :=		$(SRC_DIR)/ft_strlen.s
+SRCS +=		$(SRC_DIR)/ft_bzero.s
 OBJS :=		$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
 .PHONY:		 all clean fclean re test

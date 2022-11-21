@@ -13,6 +13,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdio.h>
+#include "libfts.h"
 
 static void	set_char(void *ptr, int index)
 {
@@ -48,8 +49,8 @@ static int	run_test(void *control, void *test, int length)
 	bzero(control, length / 2);
 	ft_bzero(test, length / 2);
 	if (memcmp(control, test, length) != 0)
-		return (printf("KO: ft_bzero\n"), 0);
-	return (1);
+		return (printf("ft_bzero: KO\n"), 0);
+	return (printf("ft_bzero: OK\n"), 1);
 }
 
 void	test_ft_bzero(void)
