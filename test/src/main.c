@@ -14,5 +14,6 @@
 
 int	main(void)
 {
+	test_ft_bzero();
 	test_ft_strlen();
 }
