@@ -1,5 +1,8 @@
 NAME :=	libfts.a
 
+CC :=	gcc
+CFLAGS :=	-Wall -Werror -Wextra -arch x86_64
+
 NASM :=	nasm
 NFLAGS :=	-f macho64
 
@@ -8,7 +11,7 @@ OBJ_DIR :=	obj
 SRCS :=	$(SRC_DIR)/ft_strlen.s
 OBJS :=	$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test
 
 all:	$(OBJ_DIR) $(NAME)
 
@@ -28,3 +31,9 @@ fclean:	clean
 	@rm -rf $(NAME)
 
 re:	fclean all
+
+##########################################################################
+#				test					 #
+##########################################################################
+test:
+	$(CC) $(CFLAGS)
