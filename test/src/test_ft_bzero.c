@@ -57,7 +57,7 @@ static int	run_test(void *control, void *test, int length)
 			return (printf("ft_bzero: KO\n"), 0);
 		++index;
 	}
-	return (printf("ft_bzero: OK\n"), 1);
+	return (1);
 }
 
 void	test_ft_bzero(void)
@@ -74,4 +74,5 @@ void	test_ft_bzero(void)
 	assert(run_test(control_str, test_str, length));
 	assert(run_test(control_int, test_int, length * sizeof(int)));
 	ft_bzero(NULL, length);
+	printf("ft_bzero: OK\n");
 }
