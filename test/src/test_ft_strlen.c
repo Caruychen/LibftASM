@@ -19,5 +19,6 @@ void	test_ft_strlen(void)
 	char	*s;
 
 	s = "Hello World";
-	printf("Test: %s, strlen: %zu, ft_strlen: %zu\n", s, strlen(s), ft_strlen(s));
+	printf("Test: %s, strlen: %zu, ft_strlen: %zu\n",
+		s, strlen(s), ft_strlen(s));
 }

@@ -69,7 +69,6 @@ void	test_ft_bzero(void)
 	int		length;
 
 	length = 42;
-	
 	init(control_str, test_str, length, &set_char);
 	init(control_int, test_int, length, &set_int);
 	assert(run_test(control_str, test_str, length));
