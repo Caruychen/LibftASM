@@ -46,10 +46,17 @@ static void	init(void *control, void *test, int length, void (*fn)(void *, int))
 
 static int	run_test(void *control, void *test, int length)
 {
-	bzero(control, length / 2);
-	ft_bzero(test, length / 2);
-	if (memcmp(control, test, length) != 0)
-		return (printf("ft_bzero: KO\n"), 0);
+	int	index;
+
+	index = 0;
+	while (index < length)
+	{
+		bzero(control, index);
+		ft_bzero(test, index);
+		if (memcmp(control, test, length) != 0)
+			return (printf("ft_bzero: KO\n"), 0);
+		++index;
+	}
 	return (printf("ft_bzero: OK\n"), 1);
 }
 
@@ -67,4 +74,5 @@ void	test_ft_bzero(void)
 	init(control_int, test_int, length, &set_int);
 	assert(run_test(control_str, test_str, length));
 	assert(run_test(control_int, test_int, length * sizeof(int)));
+	ft_bzero(NULL, length);
 }
