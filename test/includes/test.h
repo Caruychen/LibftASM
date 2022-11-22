@@ -14,8 +14,7 @@
 # define TEST_H
 
 void	test_ft_bzero(void);
-void	test_ft_isalpha(void);
-void	test_ft_isdigit(void);
+void	test_ft_is(void);
 void	test_ft_strlen(void);
 
 #endif

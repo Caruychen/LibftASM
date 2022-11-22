@@ -15,7 +15,6 @@
 int	main(void)
 {
 	test_ft_bzero();
-	test_ft_isalpha();
-	test_ft_isdigit();
+	test_ft_is();
 	test_ft_strlen();
 }
