@@ -40,6 +40,8 @@ static void	run_test(int *array)
 	while (index < USHRT_MAX)
 	{
 		assert(isupper(array[index]) == ft_isupper(array[index]));
+		assert(islower(array[index]) == ft_islower(array[index]));
+		assert(isalpha(array[index]) == ft_isalpha(array[index]));
 		++index;
 	}
 	printf("ft_isalpha: OK\n");

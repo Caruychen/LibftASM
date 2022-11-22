@@ -17,6 +17,8 @@
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isupper(int c);
+int		ft_islower(int c);
+int		ft_isalpha(int c);
 size_t	ft_strlen(const char *s);
 
 #endif

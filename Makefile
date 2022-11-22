@@ -21,6 +21,8 @@ OBJ_DIR :=	obj
 SRCS :=		$(SRC_DIR)/ft_strlen.s
 SRCS +=		$(SRC_DIR)/ft_bzero.s
 SRCS +=		$(SRC_DIR)/ft_isupper.s
+SRCS +=		$(SRC_DIR)/ft_islower.s
+SRCS +=		$(SRC_DIR)/ft_isalpha.s
 
 OBJS :=		$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
