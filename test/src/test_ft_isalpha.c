@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libfts.h"
 #include <stdlib.h>
 #include <limits.h>
 #include <ctype.h>
@@ -38,9 +39,10 @@ static void	run_test(int *array)
 	index = 0;
 	while (index < USHRT_MAX)
 	{
-		assert(isupper(array[index] == ft_isupper(array[index]));
+		assert(isupper(array[index]) == ft_isupper(array[index]));
 		++index;
 	}
+	printf("ft_isalpha: OK\n");
 }
 
 void	test_ft_isalpha(void)
