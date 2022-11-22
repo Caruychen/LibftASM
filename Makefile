@@ -23,6 +23,7 @@ SRCS +=		$(SRC_DIR)/ft_bzero.s
 SRCS +=		$(SRC_DIR)/ft_isupper.s
 SRCS +=		$(SRC_DIR)/ft_islower.s
 SRCS +=		$(SRC_DIR)/ft_isalpha.s
+SRCS +=		$(SRC_DIR)/ft_isdigit.s
 
 OBJS :=		$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
