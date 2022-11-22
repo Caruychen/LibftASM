@@ -36,7 +36,8 @@ static void	run_test(int *array)
 {
 	unsigned int	index;
 
-	printf("ft_isupper, ft_islower, ft_isalpha, ft_isdigit, ft_isalnum: ");
+	printf("ft_isupper, ft_islower, ft_isalpha, ft_isdigit, ft_isalnum, \
+ft_isascii, ft_isprint: ");
 	index = 0;
 	while (index < USHRT_MAX)
 	{
@@ -45,6 +46,8 @@ static void	run_test(int *array)
 		assert(isalpha(array[index]) == ft_isalpha(array[index]));
 		assert(isdigit(array[index]) == ft_isdigit(array[index]));
 		assert(isalnum(array[index]) == ft_isalnum(array[index]));
+		assert(isascii(array[index]) == ft_isascii(array[index]));
+		assert(isprint(array[index]) == ft_isprint(array[index]));
 		++index;
 	}
 	printf("OK\n");
