@@ -31,9 +31,9 @@ OBJS :=		$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 # **************************************************************************** #
 .PHONY: all clean fclean re
 
-all: $(LIBFTS) $(EXEC)
+all: $(EXEC)
 
-$(EXEC): $(DEP_DIR) $(OBJ_DIR) $(OBJS)
+$(EXEC): $(LIBFTS) $(DEP_DIR) $(OBJ_DIR) $(OBJS)
 	@echo "Compiling test..."
 	$(CC) $(CFLAGS) $(OBJS) $(LINK) -o $(@)
 
@@ -50,8 +50,10 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	sed 's,\($*\)\.o[ :]*,$@ $(DEP_DIR)/\1.d : ,g' < $(DEP_DIR)/$*.d.$$$$ > $(DEP_DIR)/$*.d; \
 	rm -f $(DEP_DIR)/$*.d.$$$$
 
-$(LIBFTS):
+$(LIBFTS): force
 	@$(MAKE) -C $(LIB_DIR)
+
+force:
 
 debug: CFLAGS += -g
 debug: clean $(LIBFTS) $(EXEC)
