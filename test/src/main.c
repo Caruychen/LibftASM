@@ -16,5 +16,6 @@ int	main(void)
 {
 	test_ft_bzero();
 	test_ft_is();
+	test_ft_to();
 	test_ft_strlen();
 }
