@@ -1,0 +1,5 @@
+libfts.a
+obj/
+test/dep/
+test/obj/
+test/test
