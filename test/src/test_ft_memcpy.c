@@ -66,8 +66,10 @@ void	test_ft_memcpy(void)
 	size_t	size;
 
 	size = 12;
+	printf("ft_memcpy: ");
 	init(&src, size);
 	run_test(control_dst, test_dst, src, size);
 	run_test_null(control_dst, test_dst, src, size);
+	printf("OK\n");
 	free(src);
 }
