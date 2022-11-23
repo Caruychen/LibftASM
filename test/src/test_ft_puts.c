@@ -19,10 +19,8 @@ void	run_test(char *str)
 
 	res = puts(str);
 	printf("res: %d\n", res);
-	/*
 	res = ft_puts(str);
 	printf("res: %d\n", res);
-	*/
 }
 
 void	test_ft_puts(void)
