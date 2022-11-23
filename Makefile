@@ -30,6 +30,7 @@ SRCS +=		$(SRC_DIR)/ft_isprint.s
 SRCS +=		$(SRC_DIR)/ft_toupper.s
 SRCS +=		$(SRC_DIR)/ft_tolower.s
 SRCS +=		$(SRC_DIR)/ft_puts.s
+SRCS +=		$(SRC_DIR)/ft_memcpy.s
 
 OBJS :=		$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
