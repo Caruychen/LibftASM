@@ -13,14 +13,16 @@
 #include "libfts.h"
 #include <string.h>
 #include <assert.h>
+#include <stdio.h>
+#include <unistd.h>
 
-void	init(char **str)
+static void	init(char **str, size_t size)
 {
-	*str = (char *) malloc(sizeof(char) * 12);
-	memcpy(str, "Hello World", 12);
+	*str = (char *) malloc(sizeof(char) * size);
+	memcpy(*str, "Hello World", size);
 }
 
-void	run_test(char *control, char *test, char *src, size_t size)
+static void	run_test(char *control, char *test, const char *src, size_t size)
 {
 	size_t	index;
 	void	*c_ret;
@@ -35,9 +37,25 @@ void	run_test(char *control, char *test, char *src, size_t size)
 		t_ret = ft_memcpy(test, src, index);
 		assert(memcmp(c_ret, t_ret, size) == 0);
 		assert(memcmp(control, test, size) == 0);
-		printf("%s\n%s\n", control, test);
+		assert(control == c_ret && test == t_ret);
 		++index;
 	}
+}
+
+static void	run_test_null(char *control, char *test, const char *src, size_t size)
+{
+	void	*ret;
+
+	bzero(control, size);
+	bzero(test, size);
+	ret = ft_memcpy(test, NULL, size);
+	assert(ret == test);
+	assert(memcmp(ret, test, size) == 0);
+	ret = ft_memcpy(NULL, src, size);
+	assert(ret == NULL);
+	assert(memcmp(src, "Hello World", size) == 0);
+	ret = ft_memcpy(NULL, NULL, size);
+	assert(ret == NULL);
 }
 
 void	test_ft_memcpy(void)
@@ -47,8 +65,9 @@ void	test_ft_memcpy(void)
 	char	test_dst[12] = {'\0'};
 	size_t	size;
 
-	init(&src);
 	size = 12;
+	init(&src, size);
 	run_test(control_dst, test_dst, src, size);
+	run_test_null(control_dst, test_dst, src, size);
 	free(src);
 }
