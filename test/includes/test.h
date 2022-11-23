@@ -16,6 +16,7 @@
 void	test_ft_bzero(void);
 void	test_ft_is(void);
 void	test_ft_to(void);
+void	test_ft_puts(void);
 void	test_ft_strlen(void);
 
 #endif
