@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_ft_memcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,14 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libfts.h"
 
-int	main(void)
+void	test_ft_memcpy(void)
 {
-	test_ft_bzero();
-	test_ft_is();
-	test_ft_to();
-	test_ft_puts();
-	test_ft_strlen();
-	test_ft_memcpy();
 }
