@@ -6,5 +6,5 @@ _ft_isascii:
 	setae	al
 	cmp		rdi, 0x7f
 	setbe	bl
-	and		al, bl
+	and		rax, rbx
 	ret

@@ -6,5 +6,5 @@ _ft_isdigit:
 	setae	al
 	cmp		rdi, 0x39
 	setbe	bl
-	and		al, bl
+	and		rax, rbx
 	ret

@@ -6,5 +6,5 @@ _ft_isupper:
 	setae	al
 	cmp		rdi, 0x5a
 	setbe	bl
-	and		al, bl
+	and		rax, rbx
 	ret

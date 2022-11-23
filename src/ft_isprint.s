@@ -6,5 +6,5 @@ _ft_isprint:
 	setae	al
 	cmp		rdi, 0x7e
 	setbe	bl
-	and		al, bl
+	and		rax, rbx
 	ret

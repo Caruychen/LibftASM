@@ -6,5 +6,5 @@ _ft_islower:
 	setae	al
 	cmp		rdi, 0x7a
 	setbe	bl
-	and		al, bl
+	and		rax, rbx
 	ret
