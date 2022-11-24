@@ -15,37 +15,37 @@ extern	_ft_strlen
 extern	_ft_memcpy
 
 _ft_puts:
-	push	rbp
-	mov	rbp, rsp
+	PUSH	rbp
+	MOV		rbp, rsp
 
 null_guard:
-	cmp	rdi, 0
-	jne	put_str
+	CMP		rdi, 0
+	JNE		put_str
 
 write_null_stdout:
-	lea	rsi, [rel null.string]
-	mov	rdx, null.len
-	jmp	write_stdout
+	LEA		rsi, [rel null.string]
+	MOV		rdx, null.len
+	JMP		write_stdout
 
 put_str:
 __get_length:
-	call	_ft_strlen
-	push	NEWLINE
-	sub	rsp, rax
+	CALL	_ft_strlen
+	PUSH	NEWLINE
+	SUB		rsp, rax
 __cpy_str:
-	mov	rsi, rdi
-	mov	rdi, rsp
-	mov	rdx, rax
-	call	_ft_memcpy
+	MOV		rsi, rdi
+	MOV		rdi, rsp
+	MOV		rdx, rax
+	CALL	_ft_memcpy
 __set_params:
-	mov	rsi, rsp
-	inc	rdx
+	MOV		rsi, rsp
+	INC		rdx
 
 write_stdout:
-	mov	rdi, STDOUT
-	mov	rax, MACH_SYSCALL(WRITE)
-	syscall
+	MOV		rdi, STDOUT
+	MOV		rax, MACH_SYSCALL(WRITE)
+	SYSCALL
 
 end:
-	leave
-	ret
+	LEAVE
+	RET

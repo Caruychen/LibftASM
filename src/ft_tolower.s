@@ -4,10 +4,10 @@ section	.text
 extern	_ft_isupper
 
 _ft_tolower:
-	call	_ft_isupper
-	mov		rax, rdi
-	je		end
-	add		rax, 0x20
+	CALL	_ft_isupper
+	MOV		rax, rdi
+	JE		end
+	ADD		rax, 0x20
 
 end:
-	ret
+	RET

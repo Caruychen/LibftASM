@@ -2,9 +2,9 @@ section	.text
 	global	_ft_isascii
 
 _ft_isascii:
-	cmp		rdi, 0x00
-	setae	al
-	cmp		rdi, 0x7f
-	setbe	bl
-	and		rax, rbx
-	ret
+	CMP		rdi, 0x00
+	SETAE	al
+	CMP		rdi, 0x7f
+	SETBE	bl
+	AND		rax, rbx
+	RET

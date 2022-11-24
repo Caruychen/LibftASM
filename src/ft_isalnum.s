@@ -5,9 +5,9 @@ extern	_ft_isalpha
 extern	_ft_isdigit
 
 _ft_isalnum:
-	call	_ft_isalpha
-	jne		end
-	call	_ft_isdigit
+	CALL	_ft_isalpha
+	JNE		end
+	CALL	_ft_isdigit
 
 end:
-	ret
+	RET

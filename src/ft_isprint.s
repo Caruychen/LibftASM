@@ -2,9 +2,9 @@ section	.text
 	global	_ft_isprint
 
 _ft_isprint:
-	cmp		rdi, 0x20
-	setae	al
-	cmp		rdi, 0x7e
-	setbe	bl
-	and		rax, rbx
-	ret
+	CMP		rdi, 0x20
+	SETAE	al
+	CMP		rdi, 0x7e
+	SETBE	bl
+	AND		rax, rbx
+	RET
