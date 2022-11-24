@@ -13,12 +13,20 @@
 #include "libfts.h"
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
+
+static void	run_test(const char *s)
+{
+	assert(strlen(s) == ft_strlen(s));
+}
 
 void	test_ft_strlen(void)
 {
-	char	*s;
-
-	s = "Hello World";
-	printf("Test: %s, strlen: %zu, ft_strlen: %zu\n",
-		s, strlen(s), ft_strlen(s));
+	printf("ft_strlen: ");
+	run_test("Hello World");
+	run_test("");
+	run_test("x");
+	run_test("\0");
+	assert(ft_strlen(NULL) == 0);
+	printf("OK\n");
 }

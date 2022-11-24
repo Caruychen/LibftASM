@@ -2,8 +2,10 @@ section	.text
 	global	_ft_strlen
 
 _ft_strlen:
-	mov		al, 0				; Set search for '\0'
+	mov		rax, 0				; Set search for '\0'
 	mov		rbx, rdi			; Store pointer to string
+	cmp		rdi, 0				; Return 0 if NULL pointer given
+	je		end
 
 repeat_scan:
 	mov		ecx, 0xffffffff		; repnz uses cx to count loop
@@ -16,4 +18,6 @@ return_result:
 	sub		rax, rbx
 	dec		rax					; end ptr [rdi] - start ptr [rbx] + 1
 	mov		rdi, rbx			; restore rdi
+
+end:
 	ret
