@@ -10,17 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "test.h"
 #include "libfts.h"
-#include <stdio.h>
+#include <assert.h>
+#include <string.h>
 
-void	run_test(char *str)
+static void	compare_output(const char *str, const int fd)
 {
-	int	res;
+	FILE	*file;
+	char	*res;
+	size_t	length;
 
-	res = puts(str);
-	printf("res: %d\n", res);
-	res = ft_puts(str);
-	printf("res: %d\n", res);
+	if (!str)
+		str = "(null)";
+	length = ft_strlen(str) + 2;
+	res = (char *)malloc(sizeof(*res) * length);
+	file = fdopen(fd, "r");
+	rewind(file);
+	getdelim(&res, &length, 0, file);
+	assert(memcmp(str, res, length - 2) == 0);
+	assert(res[length - 2] == '\n');
+	fr_clean_up(file, res);
+}
+
+static void	run_test(const char *str)
+{
+	int	fd;
+	int	cpy_out;
+	int	ret;
+
+	init_redirect(&fd, &cpy_out);
+	ret = ft_puts(str);
+	reset_output(&cpy_out);
+	assert(ret >= 0);
+	compare_output(str, fd);
 }
 
 void	test_ft_puts(void)
@@ -31,6 +54,7 @@ void	test_ft_puts(void)
 	char	*s4;
 	char	*s5;
 
+	printf("ft_puts: ");
 	s1 = "Hello World";
 	s2 = "";
 	s3 = "\0";
@@ -42,4 +66,5 @@ void	test_ft_puts(void)
 	run_test(s4);
 	run_test(s5);
 	run_test(NULL);
+	printf("OK\n");
 }
