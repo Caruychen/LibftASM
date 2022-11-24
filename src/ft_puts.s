@@ -1,10 +1,11 @@
 %define	MACH_SYSCALL(nb)	0x2000000 | nb
 %define	STDOUT			1
 %define	WRITE			4
+%define NEWLINE			10
 
 section	.data
 null:
-	.string	db "(null)", 10
+	.string	db "(null)", NEWLINE
 	.len	equ $ - null.string
 
 section	.text
@@ -29,7 +30,7 @@ write_null_stdout:
 put_str:
 __get_length:
 	call	_ft_strlen
-	push	0x0a
+	push	NEWLINE
 	sub	rsp, rax
 __cpy_str:
 	mov	rsi, rdi
@@ -41,7 +42,7 @@ __set_params:
 	inc	rdx
 
 write_stdout:
-	mov	rdi, 1
+	mov	rdi, STDOUT
 	mov	rax, MACH_SYSCALL(WRITE)
 	syscall
 
