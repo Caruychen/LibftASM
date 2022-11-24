@@ -17,7 +17,7 @@
 
 void	init_redirect(int *fd, int *cpy_out)
 {
-	*fd = open("temp", O_RDWR|O_CREAT|O_TRUNC, 0666);
+	*fd = open("temp", O_RDWR | O_CREAT | O_TRUNC, 0666);
 	if (*fd == -1)
 	{
 		printf("ERROR: Could not open temp file.\n");

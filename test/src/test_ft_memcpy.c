@@ -42,7 +42,8 @@ static void	run_test(char *control, char *test, const char *src, size_t size)
 	}
 }
 
-static void	run_test_null(char *control, char *test, const char *src, size_t size)
+static void	run_test_null(char *control, char *test, const char *src,
+		size_t size)
 {
 	void	*ret;
 
@@ -61,11 +62,13 @@ static void	run_test_null(char *control, char *test, const char *src, size_t siz
 void	test_ft_memcpy(void)
 {
 	char	*src;
-	char	control_dst[12] = {'\0'};
-	char	test_dst[12] = {'\0'};
+	char	control_dst[12];
+	char	test_dst[12];
 	size_t	size;
 
 	size = 12;
+	bzero(control_dst, size);
+	bzero(test_dst, size);
 	printf("ft_memcpy: ");
 	init(&src, size);
 	run_test(control_dst, test_dst, src, size);
