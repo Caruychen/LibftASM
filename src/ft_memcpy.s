@@ -12,14 +12,24 @@ guard:
 	JZ		end
 	CMP		rdi, rsi	; if (dst == src) { return }
 	JE		end
-	MOV		rbx, rsi
+	MOV		rbx, rsi	; Store src pointer for later restoration
 
-cpy_bytes:				; Potential to optimise to copy in QWORDs
+count_qwords:
+	MOV		r8, 3
+	SHRX	rcx, rdx, r8
+
+cpy_qwords:
 	CLD
+	REP		MOVSQ
+
+count_trail_bytes:
 	MOV		rcx, rdx
+	AND		rcx, 0b0000111
+
+cpy_bytes:
 	REP		MOVSB
 	MOV		rdi, rax
 	MOV		rsi, rbx
 
 end:
-	ret
+	RET
