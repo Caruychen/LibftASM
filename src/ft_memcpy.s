@@ -15,8 +15,8 @@ guard:
 	MOV		rbx, rsi	; Store src pointer for later restoration
 
 count_qwords:
-	MOV		r8, 3
-	SHRX	rcx, rdx, r8
+	MOV		rcx, rdx
+	SHR		rcx, 3
 
 cpy_qwords:
 	CLD
