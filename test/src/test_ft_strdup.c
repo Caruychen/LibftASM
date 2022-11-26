@@ -22,7 +22,7 @@ static void	run_test(const char *str)
 	size_t	test_len;
 
 	len = strlen(str);
-	test = strdup(str);
+	test = ft_strdup(str);
 	test_len  = strlen(test);
 	assert(str != test);
 	assert(memcmp(str, test, len) == 0);
