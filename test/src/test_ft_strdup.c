@@ -24,8 +24,10 @@ static void	run_test(const char *str)
 	len = strlen(str);
 	test = strdup(str);
 	test_len  = strlen(test);
+	assert(str != test);
 	assert(memcmp(str, test, len) == 0);
 	assert(len == test_len);
+	free(test);
 }
 
 void	test_ft_strdup(void)
