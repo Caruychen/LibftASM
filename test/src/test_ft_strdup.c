@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_ft_strdup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,16 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "libfts.h"
+#include <string.h>
+#include <assert.h>
+#include <stdio.h>
 
-int	main(void)
+static void	run_test(const char *str)
 {
-	test_ft_bzero();
-	test_ft_is();
-	test_ft_to();
-	test_ft_puts();
-	test_ft_strlen();
-	test_ft_memcpy();
-	test_ft_memset();
-	test_ft_strdup();
+	char	*test;
+	size_t	len;
+	size_t	test_len;
+
+	len = strlen(str);
+	test = strdup(str);
+	test_len  = strlen(test);
+	assert(memcmp(str, test, len) == 0);
+	assert(len == test_len);
+}
+
+void	test_ft_strdup(void)
+{
+
+	printf("ft_strdup: ");
+	run_test("Hello World");
+	run_test("x");
+	run_test("\0");
+	run_test("1\0 2\0");
+	run_test("");
+	printf("OK\n");
 }

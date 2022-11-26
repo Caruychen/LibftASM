@@ -27,5 +27,6 @@ void	test_ft_puts(void);
 void	test_ft_strlen(void);
 void	test_ft_memcpy(void);
 void	test_ft_memset(void);
+void	test_ft_strdup(void);
 
 #endif
