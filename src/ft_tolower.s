@@ -5,9 +5,9 @@ extern	_ft_isupper
 
 _ft_tolower:
 	CALL	_ft_isupper
-	MOV		rax, rdi
+	MOV		eax, edi
 	JE		end
-	ADD		rax, 0x20
+	ADD		eax, 0x20
 
 end:
 	RET

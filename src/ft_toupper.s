@@ -5,9 +5,9 @@ extern	_ft_islower
 
 _ft_toupper:
 	CALL	_ft_islower
-	MOV		rax, rdi
+	MOV		eax, edi
 	JE		end
-	SUB		rax, 0x20
+	SUB		eax, 0x20
 
 end:
 	RET
