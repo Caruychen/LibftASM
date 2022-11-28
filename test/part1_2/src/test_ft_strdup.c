@@ -23,7 +23,7 @@ static void	run_test(const char *str)
 
 	len = strlen(str);
 	test = ft_strdup(str);
-	test_len  = strlen(test);
+	test_len = strlen(test);
 	assert(str != test);
 	assert(memcmp(str, test, len) == 0);
 	assert(len == test_len);
@@ -32,7 +32,6 @@ static void	run_test(const char *str)
 
 void	test_ft_strdup(void)
 {
-
 	printf("ft_strdup: ");
 	run_test("Hello World");
 	run_test("x");
