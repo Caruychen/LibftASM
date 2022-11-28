@@ -6,8 +6,6 @@ extern	_ft_memcpy
 extern	_malloc
 
 _ft_strdup:
-	PUSH	rbp
-	MOV	rbp, rsi
 	PUSH	rdi		; Preserve source location
 
 allocate_heap:			; Calculates src length and allocates memory
@@ -25,5 +23,4 @@ copy_string:			; calls ft_memcpy to copy string over
 	MOV	rdi, rsi
 
 end:
-	LEAVE
 	RET
