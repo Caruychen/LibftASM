@@ -33,6 +33,7 @@ SRCS +=		$(SRC_DIR)/ft_puts.s
 SRCS +=		$(SRC_DIR)/ft_memcpy.s
 SRCS +=		$(SRC_DIR)/ft_memset.s
 SRCS +=		$(SRC_DIR)/ft_strdup.s
+SRCS +=		$(SRC_DIR)/ft_cat.s
 
 OBJS :=		$(SRCS:$(SRC_DIR)/%.s=$(OBJ_DIR)/%.o)
 
