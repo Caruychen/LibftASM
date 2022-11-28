@@ -39,5 +39,6 @@ void	test_ft_strdup(void)
 	run_test("\0");
 	run_test("1\0 2\0");
 	run_test("");
+	ft_strdup(NULL);
 	printf("OK\n");
 }

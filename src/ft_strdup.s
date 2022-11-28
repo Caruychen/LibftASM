@@ -6,6 +6,9 @@ extern	_ft_memcpy
 extern	_malloc
 
 _ft_strdup:
+	MOV	rax, 0
+	TEST	rdi, rdi
+	JZ	end
 	PUSH	rdi		; Preserve source location
 
 allocate_heap:			; Calculates src length and allocates memory
