@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libfts.h"
 #include "test.h"
 
 void	read_stdin(void)
@@ -25,14 +26,13 @@ void	test_file(const char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		exit(1);
+	ft_cat(fd);
 	if (close(fd) == -1)
 		exit(1);
 }
 
 int	main(int argc, char **argv)
 {
-	int	fd;
-
 	if (argc < 2)
 		read_stdin();
 	test_file(argv[1]);
