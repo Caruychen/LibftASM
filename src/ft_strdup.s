@@ -6,24 +6,24 @@ extern	_ft_memcpy
 extern	_malloc
 
 _ft_strdup:
-	MOV		rax, 0
+	MOV	rax, 0
 	TEST	rdi, rdi
-	JZ		end
+	JZ	end
 	PUSH	rdi		; Preserve source location
 
 allocate_heap:			; Calculates src length and allocates memory
 	CALL	_ft_strlen
-	MOV		rdi, rax
-	INC		rdi
+	MOV	rdi, rax
+	INC	rdi
 	PUSH	rdi		; preserve string length
 	CALL	_malloc
 
 copy_string:			; calls ft_memcpy to copy string over
-	POP		rdx
-	POP		rsi
-	MOV		rdi, rax
+	POP	rdx
+	POP	rsi
+	MOV	rdi, rax
 	CALL	_ft_memcpy
-	MOV		rdi, rsi
+	MOV	rdi, rsi
 
 end:
 	RET

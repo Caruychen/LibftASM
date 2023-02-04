@@ -11,9 +11,9 @@ null_guard:						; if (*s == NULL) { return }
 while:							; while (i < n)
 	CMP	rax, rsi
 	JAE	end
-	MOV	rbx, rsi				; if (i >= 8) ( bzero 1 byte at a time)
-	SUB	rbx, rax
-	CMP	rbx, 8
+	MOV	rcx, rsi				; if (i >= 8) ( bzero 1 byte at a time)
+	SUB	rcx, rax
+	CMP	rcx, 8
 	JB	set_zero
 
 large_bzero:						; bzero in 64bits
