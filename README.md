@@ -20,8 +20,8 @@ libfts.a
 
 To use this library, include it in your gcc compilation with the `L` flag.
 
-### ⚒️  Functions
-#### Part 1
+## ⚒️  Functions
+### Part 1
 The following functions were replicated in part 1:
 * ft\_bzero
 > `void ft_bzero(void *s, size_t n);`
@@ -44,7 +44,7 @@ The following functions were replicated in part 1:
 * ft\_puts
 > `int ft_puts(const char *s);`
 
-#### Part 2
+### Part 2
 Part 2 functions include:
 * ft\_strlen
 > `size_t ft_strlen(const char *s);`
@@ -55,7 +55,7 @@ Part 2 functions include:
 * ft\_strdup
 > `char *ft_strdup(const char *s1);`
 
-#### Part 3
+### Part 3
 In part 3, I re-coded `ft_cat`function, which takes a `file descriptor` as an argument, and has the same behavior as the `cat` command.
 > `void ft_cat(int fd);`
 
