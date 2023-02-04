@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:01:20 by cchen             #+#    #+#             */
-/*   Updated: 2022/11/21 13:01:22 by cchen            ###   ########.fr       */
+/*   Updated: 2023/02/04 11:58:08 by caruychen        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int	main(void)
 	test_ft_memcpy();
 	test_ft_memset();
 	test_ft_strdup();
+	return (0);
 }
