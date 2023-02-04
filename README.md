@@ -1,6 +1,6 @@
 # LibftASM
 
-This project consists of a mini-library of several basic libc functions.
+This project consists of a mini-library of several basic libc functions, written in assembly language.
 
 The concepts explored include assembly language syntax, how the stack works, and compiler behaviour.
 
