@@ -6,11 +6,12 @@ The concepts explored include assembly language syntax, how the stack works, and
 
 > [Subject pdf](https://github.com/Caruychen/42Cursus/blob/main/pdf/libft-asm.en.pdf)
 
-## Instructions
+## 📝 Instructions
 
-### Library
+### 📚 Library
 * Assembly code compiled with `nasm`
 * Intel syntax, 64 bit ASM.
+* Inline ASM is forbidden, only `.s` files are permitted.
 
 To compile the library, run `main` from the root of the repository. This will create a library file called
 ```
@@ -19,8 +20,7 @@ libfts.a
 
 To use this library, include it in your gcc compilation with the `L` flag.
 
-### Functions
-
+### ⚒️  Functions
 #### Part 1
 The following functions were replicated in part 1:
 * ft\_bzero
@@ -59,7 +59,7 @@ Part 2 functions include:
 In part 3, I re-coded `ft_cat`function, which takes a `file descriptor` as an argument, and has the same behavior as the `cat` command.
 > `void ft_cat(int fd);`
 
-### Tests
+### 🏁 Tests
 
 Mandatory tests have been written for this project, in the following directories:
 ```
