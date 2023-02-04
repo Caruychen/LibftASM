@@ -26,22 +26,36 @@ The following functions were replicated in part 1:
 * ft\_bzero
 > `void ft_bzero(void *s, size_t n);`
 * ft\_strcat
+> `char *ft_strcat(char *s1, const char *s2);`
 * ft\_isalpha
+> `int ft_isalpha(int c);`
 * ft\_isdigit
+> `int ft_isdigit(int c);`
 * ft\_isalnum
+> `int ft_isalnum(int c);`
 * ft\_isascii
+> `int ft_isascii(int c);`
 * ft\_isprint
+> `int ft_isprint(int c);`
 * ft\_toupper
+> `int ft_toupper(int c);`
 * ft\_tolower
+> `int ft_tolower(int c);`
 * ft\_puts
+> `int ft_puts(const char *s);`
 
 Part 2 functions include:
 * ft\_strlen
+> `size_t ft_strlen(const char *s);`
 * ft\_memset
+> `void *ft_memset(void *b, int c, size_t len);`
 * ft\_memcpy
+> `void *ft_memcpy(void *dst, const void *src, size_t n);`
 * ft\_strdup
+> `char *ft_strdup(const char *s1);`
 
 In part 3, I re-coded `ft_cat`function, which takes a `file descriptor` as an argument, and has the same behavior as the `cat` command.
+> `void ft_cat(int fd);`
 
 ### Tests
 
@@ -51,3 +65,11 @@ test/part1_2
 test/part3
 ```
 
+To test functions from parts 1 and 2:
+> 1. `cd` into `test/part1_2`
+> 2. run `make`
+> 3. run the resulting `./test` binary
+
+To test `ft_cat` from part 3:
+> 1. `cd` into `test/part3`
+> 2. run the `test.sh` shell script
