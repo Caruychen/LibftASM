@@ -18,46 +18,49 @@ extern	_ft_puts
 
 _ft_cat:
 	PUSH	rbp
-	MOV		rbp, rsp
-	SUB		rsp, BUFFSIZE
-	MOV		rsi, rsp
+	MOV	rbp, rsp
+	SUB	rsp, BUFFSIZE
+	MOV	rsi, rsp
 
 check_fd:
-	MOV		ebx, edi
-	CMP		edi, 0
-	JNL		read_fd
-	LEA		rdi, [rel error.nofile]
+	PUSH	rbx
+	MOV	ebx, edi
+	CMP	edi, 0
+	JNL	read_fd
+	LEA	rdi, [rel error.nofile]
 	CALL	_ft_puts
-	JMP		end
+	JMP	end
 
 read_error:
-	LEA		rdi, [rel error.read]
+	LEA	rdi, [rel error.read]
 	CALL	_ft_puts
-	JMP		end
+	JMP	end
 
 write_error:
-	LEA		rdi, [rel error.write]
+	LEA	rdi, [rel error.write]
 	CALL	_ft_puts
-	JMP		end
+	JMP	end
 
 read_fd:
-	MOV		edi, ebx
-	MOV		rdx, BUFFSIZE
-	MOV		rax, MACH_SYSCALL(READ)
+	MOV	edi, ebx
+	MOV	rdx, BUFFSIZE
+	MOV	rax, MACH_SYSCALL(READ)
 	SYSCALL
 	TEST	rax, rax
-	JZ		end
-	JS		read_error
+	JZ	end
+	JS	read_error
 
 write_stdout:
-	MOV		edi, STDOUT
-	MOV		rdx, rax
-	MOV		rax, MACH_SYSCALL(WRITE)
+	MOV	edi, STDOUT
+	MOV	rdx, rax
+	MOV	rax, MACH_SYSCALL(WRITE)
 	SYSCALL
 	TEST	rax, rax
-	JS		write_error
-	JMP		read_fd
+	JS	write_error
+	JMP	read_fd
 
 end:
-	LEAVE
+	POP	rbx
+	MOV	rsp, rbp
+	POP	rbp
 	RET

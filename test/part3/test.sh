@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 make
-echo "Compilation complete\n\nRunning tests"
+echo "Compilation complete\n\nRunning tests (if successful, there should be no output. This basic test runs diff against a sample file, and the output)"
 
 echo "Hello World" > sample
 cat sample | ./ft_cat > res
